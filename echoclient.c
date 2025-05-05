@@ -13,7 +13,7 @@ int main(int argc, char **argv)
   }
 
   host = argv[1];
-  host = argv[2];
+  port = argv[2];
 
   clientfd = Open_clientfd(host,port);
   Rio_readinitb(&rio, clientfd);
