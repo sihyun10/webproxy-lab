@@ -123,7 +123,7 @@ int parse_uri(char *uri, char *filename, char *cgiargs)
     strcpy(cgiargs, "");
     strcpy(filename, ".");
     strcat(filename, uri);
-    if (uri[strlen(uri)-1] == "/") {
+    if (uri[strlen(uri)-1] == '/') {
       strcat(filename, "home.html");
     }
     return 1;
@@ -164,7 +164,7 @@ void serve_static(int fd, char *filename, int filesize)
   srcp = Mmap(0, filesize, PROT_READ, MAP_PRIVATE, srcfd, 0);
   Close(srcfd);
   Rio_writen(fd, srcp, filesize);
-  Munmap(srcp, filesize)
+  Munmap(srcp, filesize);
 }
 
 void get_filetype(char *filename, char *filetype)
